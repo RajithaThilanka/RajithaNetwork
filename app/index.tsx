@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Header from "@/components/Header";
 import { Image } from "expo-image";
+import { Link } from "expo-router";
 import {
   ArrowRight,
   Award,
@@ -65,14 +66,16 @@ const IndexPage: FC = () => {
                 DevOps practices.
               </Text>
               <View style={[styles.flexRow, { gap: 12, marginBottom: 16 }]}>
-                <TouchableOpacity style={styles.primaryButton}>
-                  <Text style={styles.buttonTextWhite}>My Projects</Text>
-                  <ChevronRight
-                    color="white"
-                    size={16}
-                    style={{ marginLeft: 4 }}
-                  />
-                </TouchableOpacity>
+                <Link href="/projects" asChild>
+                  <TouchableOpacity style={styles.primaryButton}>
+                    <Text style={styles.buttonTextWhite}>My Projects</Text>
+                    <ChevronRight
+                      color="white"
+                      size={16}
+                      style={{ marginLeft: 4 }}
+                    />
+                  </TouchableOpacity>
+                </Link>
                 <TouchableOpacity style={styles.outlineButton}>
                   <Text style={styles.buttonTextBlue}>Contact</Text>
                 </TouchableOpacity>
